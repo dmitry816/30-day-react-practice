@@ -7,8 +7,11 @@ class App extends React.Component {
     return (
       <div className='notificationsFrame'>
         <div className='panel'>
-          <Header />
-          <Content />
+          <Header title="Timeline" />
+          <Header title="Profile" />
+          <Header title="Settings" />
+          <Header title="Chat" />
+          <Content activities={activities}/>
         </div>
       </div>
     )
