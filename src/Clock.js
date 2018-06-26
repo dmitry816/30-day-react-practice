@@ -1,9 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Clock extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.getTime();
+    }
+
+    componentWillUnmount() {
+        if(this.timeout) {
+            clearTimeout(this.timeout);
+        }
     }
     setTimer() {
         clearTimeout(this.timeout);
@@ -35,4 +42,13 @@ class Clock extends React.Component {
             </div>
         )
     }     
+}
+Clock.PropTypes = {
+    conunt: PropTypes.array.isRequired,
+    users: PropTypes.arrayOf(PropTypes.object),
+    alarmColor: PropTypes.oneOf(['red', 'blue']),
+    description: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.instanceOf(Title)
+    ]),
 }
