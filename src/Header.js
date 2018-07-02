@@ -23,3 +23,7 @@ class Header extends React.Component {
         )
     }
 }
+
+Header.PropTypes = {
+    titile: PropTypes.string
+}
